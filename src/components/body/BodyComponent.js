@@ -3,17 +3,20 @@ import HomeComponent from './HomeComponent';
 import MenuComponent from './MenuComponent';
 import ContactComponent from './ContactComponent';
 import AboutComponent from './AboutComponent';
-import {Route} from 'react-router-dom';
+import {Route,Redirect, Switch} from 'react-router-dom';
 
 
 const BodyComponent = ()=>{
     return (
         <div>
-            
-            <Route path="/" exact component={HomeComponent}/>
-            <Route path="/menu" exact component={MenuComponent}/>
-            <Route path="/contact" exact component={ContactComponent}/>
-            <Route path="/about" exact component={AboutComponent}/>
+            <Switch>
+                <Route path="/home" exact component={HomeComponent}/>
+                <Route path="/menu" exact component={MenuComponent}/>
+                <Route path="/contact" exact component={ContactComponent}/>
+                <Route path="/about" exact component={AboutComponent}/>
+                <Redirect from="/" to="/home"/>
+            </Switch>
+
             
         </div>
     );

@@ -15,7 +15,7 @@ const DishDetailComponent = (props)=>{
                     <CardText>{props.dish.description}</CardText>
                     <CardText>BDT: {props.dish.price}-</CardText>
                     <hr/>
-                    <LoadCommentComponent  comments={props.dish.comments} />
+                    <LoadCommentComponent  comments={props.comments} />
                 </CardBody>
             </Card>
         </div>
