@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, CardBody,CardTitle,CardImg,CardText} from 'reactstrap';
+import {Card,CardHeader,CardBody,CardTitle,CardImg,CardText} from 'reactstrap';
 import LoadCommentComponent from './LoadCommentComponent';
 
 const DishDetailComponent = (props)=>{
@@ -7,18 +7,16 @@ const DishDetailComponent = (props)=>{
         <div>
             <Card style={{ margin:"10px"}}>
                 <CardImg top src={props.dish.image} alt={props.dish.name}/>
+                <CardHeader>
+                <CardTitle>{props.dish.name}</CardTitle>
+                </CardHeader>
                 <CardBody style={{textAlign:"left"}}>
-                    <CardTitle>{props.dish.name}</CardTitle>
-                    <CardText>
-
-                        <p>{props.dish.description}</p>
-                        <p>BDT: {props.dish.price}-</p>
-                        <hr/>
-                        <LoadCommentComponent  comments={props.dish.comments} />
-                        
-                    </CardText>
+                    
+                    <CardText>{props.dish.description}</CardText>
+                    <CardText>BDT: {props.dish.price}-</CardText>
+                    <hr/>
+                    <LoadCommentComponent  comments={props.dish.comments} />
                 </CardBody>
-
             </Card>
         </div>
     );
